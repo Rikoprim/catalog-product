@@ -1,0 +1,88 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  overscroll-behavior: contain;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.container {
+  max-width: $content-width;
+  margin: 0 auto;
+}
+
+article {
+  max-width: $content-width;
+  margin: 0 auto;
+}
+
+button {
+  background: none;
+  font: inherit;
+  border: none;
+  cursor: pointer;
+}
+
+img,
+button,
+a {
+  display: block;
+}
+
+.product-container .container {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.product-card {
+  min-width: calc(75% - 15px);
+}
+
+.title {
+  color: $colors-black;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-transform: capitalize;
+}
+
+.btn {
+  padding: 8px 15px;
+  color: $colors-white;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: capitalize;
+  border-radius: $border-radius-md;
+  transition: 0.2s ease;
+
+  &.btn-primary {
+    background: $colors-primary;
+  }
+  &.btn-danger {
+    background: $colors-black;
+  }
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background-color: $colors-outline;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}

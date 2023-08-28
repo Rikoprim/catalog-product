@@ -1,0 +1,87 @@
+.product-minimal {
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  .product-showcase {
+    margin-bottom: 10px;
+  }
+
+  .product-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  .showcase-container {
+    z-index: 5;
+    min-width: calc(25% - 22.5px);
+  }
+
+  .showcase-wrapper {
+    display: grid;
+    align-items: center;
+    overflow-x: auto;
+  }
+
+  .showcase {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    gap: 15px;
+    border: 1px solid $colors-outline;
+    padding: 15px;
+    border-radius: $border-radius-md;
+    overflow: hidden;
+    transition: 0.2s ease;
+  }
+
+  .showcase:not(:last-child) {
+    margin-bottom: 15px;
+  }
+
+  .showcase-content {
+    width: calc(100% - 85px);
+  }
+
+  .showcase-title {
+    color: $colors-black;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: capitalize;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 2px;
+  }
+
+  .showcase-category {
+    width: max-content;
+    color: $colors-grey;
+    font-size: 15px;
+    text-transform: capitalize;
+    margin-bottom: 3px;
+  }
+
+  .showcase-category:hover {
+    color: $colors-primary;
+  }
+
+  .price-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .price {
+    font-size: 16px;
+    font-weight: 700;
+    color: $colors-primary;
+  }
+
+  .price-box del {
+    font-size: 15.5px;
+    color: $colors-outline;
+  }
+}

@@ -1,0 +1,51 @@
+.sidebar {
+  position: relative;
+  left: 0;
+  padding: 0;
+  min-width: calc(25% - 15px);
+  margin-bottom: 30px;
+  visibility: visible;
+  overflow-y: auto;
+  overscroll-behavior: auto;
+  z-index: 0;
+}
+.category {
+  padding: 20px;
+  margin-bottom: 30px;
+  border: 1px solid $colors-outline;
+  border-radius: $border-radius-md;
+
+  .title {
+    color: $colors-secondary;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    margin-bottom: 10px;
+  }
+
+  .menu-category {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .menu-title-flex {
+    padding: 7px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .menu-title {
+    cursor: pointer;
+    font-size: 17px;
+    color: $colors-grey;
+    font-weight: 500;
+
+    &:hover {
+      color: $colors-primary;
+    }
+  }
+}

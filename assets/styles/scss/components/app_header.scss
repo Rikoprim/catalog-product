@@ -1,0 +1,104 @@
+.header {
+  height: $nav-height;
+  background: #ffff;
+  border-bottom: 1px solid #efefef;
+  transition: top 0.3s;
+}
+
+.sticky {
+  z-index: 99;
+  position: sticky;
+  background: #ffff;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  top: 0;
+}
+
+.brand {
+  margin-right: 30px;
+  float: left;
+  line-height: $nav-height;
+  a,
+  a:visited {
+    font-size: 26px;
+    font-family: 'Philosopher', sans-serif;
+    font-weight: 700;
+    color: $colors-black;
+    text-decoration: none;
+  }
+}
+
+nav {
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+      float: left;
+      position: relative;
+      a,
+      a:visited {
+        display: block;
+        padding: 0 20px;
+        line-height: $nav-height;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 400;
+        color: $colors-grey;
+        &:not(:only-child):after {
+          padding-left: 4px;
+          content: ' ▾';
+        }
+        &:hover {
+          color: $colors-primary;
+        }
+      }
+      ul li {
+        min-width: 190px;
+        a {
+          padding: 15px;
+          line-height: 20px;
+        }
+      }
+    }
+  }
+}
+
+.nav-user {
+  float: right;
+  line-height: $nav-height;
+  display: flex;
+
+  .header-search {
+    position: relative;
+    margin-right: 15px;
+    .search-field {
+      width: 300px;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #efefef;
+      border-radius: 20px;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
+
+    i {
+      position: absolute;
+      font-size: 20px;
+      display: block;
+      top: 0;
+      right: 0;
+      margin-right: 10px;
+    }
+  }
+  .header-action {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 15px;
+
+    i {
+      font-size: 30px;
+    }
+  }
+}
