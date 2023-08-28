@@ -1,22 +1,40 @@
 {
   "product": [
     {
-      "id": 5925883,
-      "name": "Girls pnk Embro design Top",
-      "type": "Sale",
-      "category": "Jewelry",
-      "description": "loremsum",
-      "price": 70,
-      "images": "shorts"
+      "id": 4695334,
+      "name": "Mens Winter Leathers Jackets",
+      "type": "New",
+      "category": "Clothes",
+      "description": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+      "price": 200,
+      "images": "jacket-blue"
     },
     {
-      "id": 7264412,
-      "name": "Running & Trekking Shoes",
+      "id": 9699612,
+      "name": "Pure Garment Dyed Cotton Shirt",
       "type": "Sale",
-      "category": "Cosmetics",
-      "description": "loremsum",
-      "price": 56,
-      "images": "shoe-brown"
+      "category": "Clothes",
+      "description": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+      "price": 150,
+      "images": "shirt"
+    },
+    {
+      "id": 955212,
+      "name": "Casual Men's Brown Shoes",
+      "type": "Sale",
+      "category": "Footwear",
+      "description": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+      "price": 200,
+      "images": "shoe-bot"
+    },
+    {
+      "id": 7619970,
+      "name": "Pocket Watch Leather Pouch",
+      "type": "Sale",
+      "category": "Glasses",
+      "description": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+      "price": 175,
+      "images": "watch-gold"
     }
   ]
 }

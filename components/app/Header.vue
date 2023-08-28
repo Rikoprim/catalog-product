@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const isSticky = ref<boolean>(false)
+const router = useRouter()
 
 const checkSticky = () => {
   if (window.pageYOffset > 100) {
@@ -21,8 +22,11 @@ onUnmounted(() => {
 <template>
   <div class="header" :class="{ sticky: isSticky }">
     <div class="container">
-      <div class="brand">
-        <a href="#"> StoreID </a>
+      <div class="brand" @click="router.push('/product')">
+        <div class="nav-mobile">
+          <li class="mdi mdi-menu"></li>
+        </div>
+        <a> StoreID </a>
       </div>
       <nav>
         <ul class="nav-list">
@@ -46,8 +50,8 @@ onUnmounted(() => {
           <i class="mdi mdi-magnify"></i>
         </div>
         <div class="header-action">
-          <i class="mdi mdi-account-outline"></i>
-          <i class="mdi mdi-shopping-outline"></i>
+          <i class="mdi mdi-account-outline" @click="router.push('/gallery')" />
+          <i class="mdi mdi-shopping-outline" />
         </div>
       </div>
     </div>

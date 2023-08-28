@@ -1,6 +1,17 @@
 <script setup lang="ts">
 const store = useProductStore()
 const router = useRouter()
+
+const filterProduct = computed(() => {
+  if (store.filter) {
+    const dataFilters = store.listProducts.filter(
+      (item) => item.category === store.filter
+    )
+    return dataFilters
+  } else {
+    return store.listProducts
+  }
+})
 </script>
 
 <template>
@@ -8,7 +19,7 @@ const router = useRouter()
     <h2 class="title">Products</h2>
     <hr />
     <div class="product-grid">
-      <div class="showcase" v-for="(item, id) in store.listProducts" :key="id">
+      <div class="showcase" v-for="(item, id) in filterProduct" :key="id">
         <div class="showcase-banner">
           <img
             :src="`/products/${item.images}.jpg`"

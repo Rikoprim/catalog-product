@@ -7,8 +7,14 @@ const handleDelete = async (id: number) => {
   store.getProduct()
 }
 
-const handleDetail = async (id: number) => {
+const handleEdit = async (id: number) => {
   await store.getDetailProduct(id)
+  dialog.value = true
+}
+
+const openDialog = () => {
+  dialog.value = true
+  store.clearValues()
 }
 </script>
 
@@ -19,7 +25,7 @@ const handleDetail = async (id: number) => {
         <div class="product-showcase">
           <div class="product-header">
             <h2 class="title">List product</h2>
-            <button class="btn btn-primary" @click="dialog = true">
+            <button class="btn btn-primary" @click="openDialog">
               add product
             </button>
           </div>
@@ -53,7 +59,7 @@ const handleDetail = async (id: number) => {
                 </div>
 
                 <div class="showcase-actions">
-                  <button class="btn-action" @click="handleDetail(item.id)">
+                  <button class="btn-action" @click="handleEdit(item.id)">
                     <i class="mdi mdi-circle-edit-outline"></i>
                   </button>
 

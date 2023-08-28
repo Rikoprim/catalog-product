@@ -7,33 +7,42 @@ import cosmetics from '~/assets/images/icons/cosmetics.svg?url'
 import glasses from '~/assets/images/icons/glasses.svg?url'
 import bag from '~/assets/images/icons/bag.svg?url'
 
-const categorys = markRaw<{ icon: string; title: string }[]>([
+const store = useProductStore()
+
+const categorys = markRaw<{ icon: string; value: string; title: string }[]>([
+  {
+    icon: glasses,
+    value: '',
+    title: 'All',
+  },
   {
     icon: dress,
+    value: 'Clothes',
     title: 'Clothes',
   },
   {
     icon: shoes,
+    value: 'Footwear',
     title: 'Footwear',
   },
   {
     icon: jewelry,
+    value: 'Jewelry',
     title: 'Jewelry',
   },
   {
     icon: perfume,
+    value: 'Perfume',
     title: 'Perfume',
   },
   {
     icon: cosmetics,
+    value: 'Cosmetics',
     title: 'Cosmetics',
   },
   {
-    icon: glasses,
-    title: 'Glasses',
-  },
-  {
     icon: bag,
+    value: 'Bags',
     title: 'Bags',
   },
 ])
@@ -53,7 +62,9 @@ const categorys = markRaw<{ icon: string; title: string }[]>([
             class="menu-title-img"
           />
 
-          <p class="menu-title">{{ category.title }}</p>
+          <p class="menu-title" @click="store.insertFilter(category.value)">
+            {{ category.title }}
+          </p>
         </div>
       </li>
     </ul>

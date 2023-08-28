@@ -3,6 +3,7 @@ import { customAlphabet } from 'nanoid/non-secure'
 
 const nanoid = customAlphabet('1234567890', 7)
 const id = parseInt(nanoid())
+const isEdit = ref<number>(0)
 const type = markRaw(['New', 'Sale'])
 const store = useProductStore()
 const category = markRaw([
@@ -11,7 +12,6 @@ const category = markRaw([
   'Jewelry',
   'Perfume',
   'Cosmetics',
-  'Glasses',
   'Bags',
 ])
 
@@ -48,11 +48,20 @@ const form = ref({
 const { addProduct } = useProduct()
 
 const submiProduct = async () => {
-  const { status } = await addProduct(form.value)
-  if (status.value === 'success') {
-    emits('onClose')
-    store.getProduct()
+  if (isEdit.value) {
+    await store.updateProduct(form.value)
+  } else {
+    await addProduct(form.value)
   }
+  emits('onClose')
+  store.clearValues()
+  store.getProduct()
+}
+
+const product = computed(() => store.editProduct)
+if (product.value) {
+  form.value = product.value
+  isEdit.value = product.value?.id
 }
 </script>
 
@@ -122,7 +131,9 @@ const submiProduct = async () => {
       <button type="reset" class="btn btn-danger" @click="emits('onClose')">
         cancel
       </button>
-      <button type="submit" class="btn btn-primary">save</button>
+      <button type="submit" class="btn btn-primary">
+        {{ isEdit ? 'update' : 'save' }}
+      </button>
     </div>
   </form>
 </template>

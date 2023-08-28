@@ -1,6 +1,14 @@
-# Nuxt 3 Minimal Starter
+# Nuxt 3 Catalogs Product
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+
+## Run Database
+
+Make sure to install the dependencies:
+
+````bash
+# json-server
+json-server --watch db.json --port 4000
 
 ## Setup
 
@@ -15,7 +23,7 @@ pnpm install
 
 # yarn
 yarn install
-```
+````
 
 ## Development Server
 
